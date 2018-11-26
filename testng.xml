@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Test suite" parallel="tests" thread-count="1">
+    <parameter name="webDriverFactoryMode" value="local"/>
+    <test name="ChromeTest" verbose="1" parallel="true">
+        <parameter name="browserName" value="chrome" />
+        <classes>
+            <class name="tests.web.WebSuite" />
+        </classes>
+    </test>
+
+    <test name="InternetExplorerTest" verbose="1" parallel="true">
+        <parameter name="browserName" value="ie" />
+        <classes>
+            <class name="tests.web.WebSuite" />
+        </classes>
+    </test>
+
+    <test name="FireFoxTest" verbose="1" parallel="true">
+        <parameter name="browserName" value="firefox" />
+        <classes>
+            <class name="tests.web.WebSuite" />
+        </classes>
+    </test>
+
+    <test name="Android mobile test">
+        <parameter name="Device" value="NEXUS5X"/>
+        <classes>
+            <class name="tests.mobile.MobileSuite"/>
+        </classes>
+    </test>
+
+</suite>
